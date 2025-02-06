@@ -1,56 +1,17 @@
-# mon-app-formulaire
+- ember new mon-projet
+- ember g route todo-lists (juste garder le title et l'outlet)
+- ember g route todo-lists/index
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+  - dans mon index route, j'ai recuperer la liste de todos du localStorage
 
-## Prerequisites
+- ember g route todo-lists/new
 
-You will need the following things properly installed on your computer.
+  - dans la route new, j'ai cree un model vide
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) (with npm)
-- [Ember CLI](https://cli.emberjs.com/release/)
-- [Google Chrome](https://google.com/chrome/)
-
-## Installation
-
-- `git clone <repository-url>` this repository
-- `cd mon-app-formulaire`
-- `npm install`
-
-## Running / Development
-
-- `npm run start`
-- Visit your app at [http://localhost:4200](http://localhost:4200).
-- Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-- `npm run test`
-- `npm run test:ember -- --server`
-
-### Linting
-
-- `npm run lint`
-- `npm run lint:fix`
-
-### Building
-
-- `npm exec ember build` (development)
-- `npm run build` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-- [ember.js](https://emberjs.com/)
-- [ember-cli](https://cli.emberjs.com/release/)
-- Development Browser Extensions
-  - [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  - [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+- ember g controller todo-lists/new
+  - dans mon controller, j'ai defini l'action de sauver, et l'action
+    de mettre à jour le model à chaque pression sur le clavier dans l'input
+    nom
+- ember g service todo-manager
+  - j'ai déplacé la logique de gestion du localStorage pour pouvoir
+    l'utiliser à divers endroits

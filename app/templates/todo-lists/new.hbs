@@ -1,0 +1,11 @@
+{{page-title "New"}}
+<form>
+  <input
+    placeholder="Entrer un nom"
+    type="text"
+    value={{@model.name}}
+    {{on "input" this.setTodoName}}
+  />
+
+  <button type="submit" {{on "click" this.save}}>Soumettre</button>
+</form>

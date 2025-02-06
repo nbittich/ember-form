@@ -1,0 +1,29 @@
+{{page-title "Index"}}
+
+<LinkTo @route="todo-lists.new">
+  Nouveau todo
+</LinkTo>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Date de création</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#unless @model}}
+      <tr>
+        <td>Pas d'entrée dans la db</td>
+      </tr>
+    {{/unless}}
+    {{#each @model as |todo|}}
+      <tr>
+        <td>{{todo.id}}</td>
+        <td>{{todo.name}}</td>
+        <td>{{format-date todo.createdDate}}</td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>
