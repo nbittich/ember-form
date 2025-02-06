@@ -9,6 +9,7 @@
       <th>ID</th>
       <th>Nom</th>
       <th>Date de création</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -22,6 +23,12 @@
         <td>{{todo.id}}</td>
         <td>{{todo.name}}</td>
         <td>{{format-date todo.createdDate}}</td>
+        <td><button
+            type="button"
+            {{on "click" (fn this.deleteTodo todo)}}
+          >Supprimer</button>
+          <LinkTo @route="todo-lists.edit" @model={{todo}}>Edit</LinkTo>
+        </td>
       </tr>
     {{/each}}
 

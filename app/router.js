@@ -9,5 +9,6 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('todo-lists', function () {
     this.route('new');
+    this.route('edit', { path: '/:id' });
   });
 });

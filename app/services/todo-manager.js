@@ -6,8 +6,15 @@ export default class TodoManagerService extends Service {
   }
 
   updateTodos(todo) {
-    const todos = this.getTodos();
+    let todos = this.getTodos();
+    todos = todos.filter((t) => t.id !== todo.id);
     todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+
+  deleteTodo(todo) {
+    let todos = this.getTodos();
+    todos = todos.filter((t) => t.id !== todo.id);
     localStorage.setItem('todos', JSON.stringify(todos));
   }
 }
