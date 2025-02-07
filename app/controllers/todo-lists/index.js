@@ -12,6 +12,6 @@ export default class TodoListsIndexController extends Controller {
   @action
   deleteTodo(todo) {
     this.todoManager.deleteTodo(todo);
-    this.router.transitionTo('todo-lists.index');
+    this.router.refresh();
   }
 }
